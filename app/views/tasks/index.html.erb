@@ -1,8 +1,41 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <title>Your Online To Do List</title>
+</head>
+<body>
+  <div>
+  <h1 class="title">To Do List:</h1>
+  </div>
 
-<ul>
-   <% @tasks.each do |task| %>
-   <li><%= link_to task.title, task_path(task) %></li>
-   <% end %>
-</ul>
+
+  <div class="container">
+    <div class="row">
+      <div class="cards">
+            <% @tasks.each do |task| %>
+              <div class="card">
+                <div class="col-xs-12">
+                  <%= link_to task.title, task_path(task) %>
+                </div>
+              </div>
+            <% end %>
+      </div>
+    </div>
+    <div class="button" >
+      <%= link_to "Create", new_task_path %>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
